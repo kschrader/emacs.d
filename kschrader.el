@@ -40,6 +40,7 @@
                              paredit
                              php-mode
                              puppet-mode
+                             rainbow-delimiters
                              restclient
                              rvm
                              scala-mode
@@ -306,6 +307,12 @@
   (setq js-indent-level 2))
 
 (add-hook 'js-mode-hook 'js-custom)
+
+(require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+(setq cider-repl-result-prefix ";; => ")
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
