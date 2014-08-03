@@ -313,6 +313,8 @@
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+
 (setq cider-repl-result-prefix ";; => ")
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
@@ -328,6 +330,8 @@
 
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(setq cider-repl-history-file "/Users/kschrader/.cider_history")
 
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
