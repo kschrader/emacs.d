@@ -65,43 +65,43 @@
 
     This is the list of packages used in this configuration.
     #+begin_src emacs-lisp
-      (defvar kschrader/packages '(ac-slime
-                                   auto-complete
-                                   autopair
-                                   cider
-                                   clojure-mode
-                                   clojure-test-mode
-                                   coffee-mode
-                                   csharp-mode
-                                   deft
-                                   erlang
-                                   feature-mode
-                                   flycheck
-                                   gist
-                                   go-mode
-                                   graphviz-dot-mode
-                                   haml-mode
-                                   haskell-mode
-                                   htmlize
-                                   magit
-                                   markdown-mode
-                                   marmalade
-                                   nodejs-repl
-                                   o-blog
-                                   org
-                                   paredit
-                                   php-mode
-                                   puppet-mode
-                                   restclient
-                                   rvm
-                                   scala-mode
-                                   smex
-                                   sml-mode
-                                   solarized-theme
-                                   web-mode
-                                   writegood-mode
-                                   yaml-mode)
-        "Default packages")
+            (defvar kschrader/packages '(ac-slime
+                                         auto-complete
+                                         autopair
+                                         cider
+                                         cider-test
+                                         clojure-mode
+                                         coffee-mode
+                                         csharp-mode
+                                         deft
+                                         erlang
+                                         feature-mode
+                                         flycheck
+                                         gist
+                                         go-mode
+                                         graphviz-dot-mode
+                                         haml-mode
+                                         haskell-mode
+                                         htmlize
+                                         magit
+                                         markdown-mode
+                                         marmalade
+                                         nodejs-repl
+                                         o-blog
+                                         org
+                                         paredit
+                                         php-mode
+                                         puppet-mode
+                                         restclient
+                                         rvm
+                                         scala-mode
+                                         smex
+                                         sml-mode
+                                         solarized-theme
+                                         web-mode
+                                         writegood-mode
+                                         yaml-mode)
+              "Default packages")
     #+end_src
 *** Install default packages
     :PROPERTIES:
