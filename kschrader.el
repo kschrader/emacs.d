@@ -19,7 +19,6 @@
                              autopair
                              cider
                              clojure-mode
-                             clojure-test-mode
                              coffee-mode
                              csharp-mode
                              deft

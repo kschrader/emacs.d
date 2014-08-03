@@ -69,7 +69,6 @@
                                          auto-complete
                                          autopair
                                          cider
-                                         cider-test
                                          clojure-mode
                                          coffee-mode
                                          csharp-mode
