@@ -14,7 +14,8 @@
 
 (setq package-archive-enable-alist '(("melpa" deft magit)))
 
-(defvar kschrader/packages '(ac-slime
+(defvar kschrader/packages '(ac-cider-compliment
+                             ac-slime
                              auto-complete
                              autopair
                              cider
@@ -311,8 +312,22 @@
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
 (setq cider-repl-result-prefix ";; => ")
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+(require 'ac-cider-compliment)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-compliment-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-compliment-repl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes cider-mode))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
