@@ -78,6 +78,7 @@
                                    feature-mode
                                    flycheck
                                    gist
+                                   git-gutter
                                    go-mode
                                    graphviz-dot-mode
                                    haml-mode
@@ -90,7 +91,6 @@
                                    o-blog
                                    org
                                    paredit
-                                   php-mode
                                    puppet-mode
                                    rainbow-delimiters
                                    restclient
@@ -185,7 +185,7 @@
     I have some modifications to the default display. First, a
     minor tweak to the frame title. It's also nice to be able to see
     when a file actually ends. This will put empty line markers into
-    the left hand side.
+    the left hand side. I also like to see Git changes in the gutter
     #+begin_src emacs-lisp
       (when window-system
         (setq frame-title-format '(buffer-file-name "%f" ("%b"))))
@@ -193,6 +193,9 @@
       (setq-default indicate-empty-lines t)
       (when (not indicate-empty-lines)
         (toggle-indicate-empty-lines))
+
+      (global-git-gutter-mode +1)
+      (add-hook 'clojure-mode-hook 'git-gutter-mode)
     #+end_src
 *** Indentation
     :PROPERTIES:

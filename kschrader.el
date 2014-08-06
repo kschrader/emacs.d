@@ -27,6 +27,7 @@
                              feature-mode
                              flycheck
                              gist
+                             git-gutter
                              go-mode
                              graphviz-dot-mode
                              haml-mode
@@ -39,7 +40,6 @@
                              o-blog
                              org
                              paredit
-                             php-mode
                              puppet-mode
                              rainbow-delimiters
                              restclient
@@ -83,6 +83,9 @@
 (setq-default indicate-empty-lines t)
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
+
+(global-git-gutter-mode +1)
+(add-hook 'clojure-mode-hook 'git-gutter-mode)
 
 (setq tab-width 2
       indent-tabs-mode nil)
